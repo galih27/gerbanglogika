@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Logika Algoritma</title>
+    </head>
+    <style>
+        div.a {
+            text-align: center;
+            font-size: 12px;
+            color: black;
+            font-family: Helvetica;
+        }
+        div.b {
+            text-align: center;
+            style=width:100px;
+            border:1px
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius:10px;
+            -moz-border-radius:4px;
+            height:20px;
+            font-family:Garamond;
+            margin-left:10px;”
+        }
+        body {
+            background-image: url("bg.png");
+        }
+      </style>
+      <br>
+      <br>
+      <br>
+    <body>
+        <div class="a">
+            <h3> GALIH SURYO WIBOWO</h3>
+            <h3> 2022804016</h3>
+            <h3> Matematika Sistem Informasi 2</h3>
+        </div>
+        <br>
+        <br>
+        <div class="a">
+        <select id="inp1">
+            <option value="space"></option>
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+        <select id="gate">
+            <option value="and">and</option>
+            <option value="or">or</option>
+            <option value="not">not</option>
+        </select>
+        <select id="inp2">
+            <option value="space"></option>
+            <option value="1">1</option>
+            <option value="0">0</option>
+        </select>
+        </div>
+        <div class="b">
+        <input type="textbox" name="display" id="display" class="resizedTextbox" height="100px" >
+        <br>
+        <input id="out" type="button" value="Hasil" onclick="output();">
+        </div>
+    </body>
+    <script>
+        function output()
+        {
+            var inp1 = document.getElementById('inp1').value;
+            var inp2 = document.getElementById('inp2').value;
+            var gate = document.getElementById('gate').value;
+            var result1 = "      Hasilnya 1 atau True";
+            var result0 = "      Hasilnya 0 atau False";
+
+            if((inp1 == "1" && gate == "or" && inp2 == "0") || (inp1 == "0" && gate == "or" && inp2 == "1") || (inp1 == "1" && gate == "and" && inp2 == "1")
+                || (inp1 == "1" && gate == "or" && inp2 == "1") || (inp1 == "0" && gate == "not" && inp2 == "space")) 
+                { document.getElementById('display').value = result1;
+                } 
+                else if((inp1 == "0" && gate == "or" && inp2 == "0") || (inp1 == "0" && gate == "and" && inp2 == "1") 
+                || (inp1 == "0" && gate == "and" && inp2 == "0") || (inp1 == "1" && gate == "and" && inp2 == "0") 
+                || (inp1 == "1" && gate == "not" && inp2 == "space") || 
+                (inp1 == "1" && gate == "not" && inp2 == "space"))
+                    {document.getElementById('display').value = result0;}
+                else {
+                    alert("Eiiiiitttsss... Jangan Buru-buru brow, Belum Diisi nilainya, pelan-pelan aja sob")
+                }
+        }
+            
+    </script>
+        
+</html>
